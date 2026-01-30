@@ -3,6 +3,14 @@ import spacy
 from collections import Counter
 import json
 from datetime import datetime
+import os
+import time
+
+time.sleep(1)
+
+newsapi_key = os.getenv("NEWSAPI_KEY")
+gnews_key = os.getenv("GNEWS_KEY")
+mstack_key = os.getenv("MEDIASTACK_KEY")
 
 # Load spaCy for accurate trend detection
 nlp = spacy.load("en_core_web_sm")
@@ -13,7 +21,7 @@ def fetch_master_news(query="trending+news"):
     
     # --- API 1: NewsAPI.org ---
     try:
-        url = f"https://newsapi.org/v2/everything?q={query}&apiKey=e657de4f04dc403ab6908849f710704c"
+        url = f"https://newsapi.org/v2/everything?q={query}&apiKey={newsapi_key}"
         data = requests.get(url).json()
         for art in data.get('articles', []):
             if art['url'] not in seen_urls:
@@ -28,7 +36,6 @@ def fetch_master_news(query="trending+news"):
 
     # --- API 2: GNews.io ---
     try:
-        gnews_key = "0b74370c656a6eb17e5d728650b8ef50"
         url = f"https://gnews.io/api/v4/search?q={query}&token={gnews_key}&lang=en"
         data = requests.get(url).json()
         for art in data.get('articles', []):
@@ -44,7 +51,7 @@ def fetch_master_news(query="trending+news"):
 
     # --- API 3: Mediastack ---
     try:
-        mstack_key = "cccd8a63afbf8bcabd7e268190592b76"
+
         url = f"http://api.mediastack.com/v1/news?access_key={mstack_key}&keywords={query}"
         data = requests.get(url).json()
         for art in data.get('data', []):
