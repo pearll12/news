@@ -1,0 +1,78 @@
+{
+    "timestamp": "2026-01-30 20:29",
+    "total_articles_analyzed": 129,
+    "trending_topics": [
+        {
+            "topic": "AI",
+            "mention_count": 88,
+            "articles": [
+                {
+                    "title": "Claude Code is suddenly everywhere inside Microsoft",
+                    "url": "https://www.theverge.com/tech/865689/microsoft-claude-code-anthropic-partnership-notepad",
+                    "desc": "Developers have been comparing the strengths and weaknesses of Anthropic's Claude Code, Anysphere's Cursor, and Microsoft's GitHub Copilot for months now, looking for a winner. While no individual AI coding tool manages to be the best at every task that softw\u2026",
+                    "source": "The Verge"
+                },
+                {
+                    "title": "The winter storm tested power grids straining to accommodate AI data centers",
+                    "url": "https://www.theverge.com/report/868859/electricity-rates-power-grid-ai-data-center-winter-storm",
+                    "desc": "The colossal winter storm that swept across 34 states left hundreds of thousands of people without electricity. Bitterly cold temperatures lingering after Winter Storm Fern are still testing power grids, already under stress from a rush of new AI data centers\u2026",
+                    "source": "The Verge"
+                },
+                {
+                    "title": "The winter storm tested power grids straining to accommodate AI data centers",
+                    "url": "https://www.theverge.com/report/868859/electricity-rates-power-grid-ai-data-center-winter-storm",
+                    "desc": "The colossal winter storm that swept across 34 states left hundreds of thousands of people without electricity. Bitterly cold temperatures lingering after Winter Storm Fern are still testing power grids, already under stress from a rush of new AI data centers\u2026",
+                    "source": "The Verge"
+                }
+            ]
+        },
+        {
+            "topic": "Google",
+            "mention_count": 13,
+            "articles": [
+                {
+                    "title": "What Apple and Google\u2019s Gemini deal means for both companies",
+                    "url": "https://www.theverge.com/ai-artificial-intelligence/860989/apple-google-gemini-siri-ai-deal-what-it-means",
+                    "desc": "For years, Apple and Google have had a will-they-won't-they type of relationship, as far as which AI company Apple would pick to underpin its Siri virtual assistant and give it new AI-fueled personalization and agentic capabilities. Apple has spent the last y\u2026",
+                    "source": "The Verge"
+                },
+                {
+                    "title": "Apple Taps Google Gemini to Give Siri an AI Glow-Up",
+                    "url": "https://gizmodo.com/apple-taps-google-gemini-to-give-siri-an-ai-glow-up-2000709013",
+                    "desc": "Thanks to the news, Google has now become the fourth company to hit $4 trillion market value.",
+                    "source": "Gizmodo.com"
+                },
+                {
+                    "title": "11 executives and researchers who left Google in 2025 \u2014 mostly for Microsoft",
+                    "url": "https://www.businessinsider.com/executives-and-researchers-who-left-google-in-2025-2026-1",
+                    "desc": "Two DeepMind cofounders are now on the opposite sides of an intensifying AI talent war, as Microsoft lures away Google employees in 2025.",
+                    "source": "Business Insider"
+                }
+            ]
+        },
+        {
+            "topic": "Microsoft",
+            "mention_count": 9,
+            "articles": [
+                {
+                    "title": "Claude Code is suddenly everywhere inside Microsoft",
+                    "url": "https://www.theverge.com/tech/865689/microsoft-claude-code-anthropic-partnership-notepad",
+                    "desc": "Developers have been comparing the strengths and weaknesses of Anthropic's Claude Code, Anysphere's Cursor, and Microsoft's GitHub Copilot for months now, looking for a winner. While no individual AI coding tool manages to be the best at every task that softw\u2026",
+                    "source": "The Verge"
+                },
+                {
+                    "title": "Microsoft reshuffles teams to bolster GitHub as AI coding and agent wars heat up",
+                    "url": "https://www.businessinsider.com/microsoft-github-reshuffle-ai-coding-agents-2026-1",
+                    "desc": "GitHub, the dominant software development platforms, is responding to the rise of AI coding services and AI agents",
+                    "source": "Business Insider"
+                },
+                {
+                    "title": "11 executives and researchers who left Google in 2025 \u2014 mostly for Microsoft",
+                    "url": "https://www.businessinsider.com/executives-and-researchers-who-left-google-in-2025-2026-1",
+                    "desc": "Two DeepMind cofounders are now on the opposite sides of an intensifying AI talent war, as Microsoft lures away Google employees in 2025.",
+                    "source": "Business Insider"
+                }
+            ]
+        }
+    ]
+}
