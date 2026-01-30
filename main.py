@@ -131,6 +131,28 @@ final_report = generate_trending_report(raw_news)
 
 print("JSON saved successfully!")
 
+def draw_wrapped_text(draw, text, font, x, y, max_width, fill, line_spacing=8):
+    words = text.split()
+    lines = []
+    line = ""
+
+    for word in words:
+        test = f"{line} {word}".strip()
+        if draw.textlength(test, font=font) <= max_width:
+            line = test
+        else:
+            lines.append(line)
+            line = word
+    if line:
+        lines.append(line)
+
+    for ln in lines:
+        draw.text((x, y), ln, fill=fill, font=font)
+        y += font.getbbox(ln)[3] + line_spacing
+
+    return y  # return where the next text should start
+
+
 def generate_trending_image(report):
     if not report["trending_topics"]:
         print("No trending topics found.")
@@ -142,6 +164,7 @@ def generate_trending_image(report):
 
     title = article["title"]
     source = article["source"]
+    desc = article["desc"]
 
     WIDTH, HEIGHT = 1080, 1080
 
@@ -156,35 +179,45 @@ def generate_trending_image(report):
     # Fonts (fallback-safe)
     FONT_BOLD = r"C:\Windows\Fonts\segoeuib.ttf"
     FONT_REG  = r"C:\Windows\Fonts\segoeui.ttf"
-    title_font = ImageFont.truetype(FONT_BOLD, 72)
-    meta_font  = ImageFont.truetype(FONT_REG, 40)
+    title_font = ImageFont.truetype(FONT_BOLD, 40)
+    meta_font  = ImageFont.truetype(FONT_REG, 25)
+    desc_font = ImageFont.truetype(FONT_REG, 25)
 
     # Layout
     margin_x = 80
     y = 200
     max_width = WIDTH - 2 * margin_x
 
+    y = 200
+
     # Header
     draw.text((margin_x, 100), "NEWS FOR YOU", fill="#aaaaaa", font=meta_font)
     draw.text((margin_x, 140), topic_name.upper(), fill="#ffffff", font=meta_font)
 
-    # Wrapped title
-    words = title.split()
-    lines = []
-    line = ""
+    # Title
+    y = draw_wrapped_text(
+        draw=draw,
+        text=title,
+        font=title_font,
+        x=margin_x,
+        y=y,
+        max_width=max_width,
+        fill="white",
+        line_spacing=12
+    )
 
-    for word in words:
-        test = f"{line} {word}".strip()
-        if draw.textlength(test, font=title_font) <= max_width:
-            line = test
-        else:
-            lines.append(line)
-            line = word
-    lines.append(line)
+    y += 20  # space between title and description
 
-    for ln in lines:
-        draw.text((margin_x, y), ln, fill="white", font=title_font)
-        y += title_font.getbbox(ln)[3] + 12
+    y = draw_wrapped_text(
+        draw=draw,
+        text=desc,
+        font=desc_font,
+        x=margin_x,
+        y=y,
+        max_width=max_width,
+        fill="#dddddd",
+        line_spacing=10
+    )
 
     # Footer
     draw.text(
@@ -197,7 +230,5 @@ def generate_trending_image(report):
     filename = "top_trending_topic.png"
     img.save(filename, quality=95)
     print(f"Trending image generated: {filename}")
-
-    
 
 generate_trending_image(final_report)
